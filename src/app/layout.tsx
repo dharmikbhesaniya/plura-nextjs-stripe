@@ -18,7 +18,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <ClerkProvider appearance={{ baseTheme: dark }}>
     <html lang="en">
       <body className={font.className}>
         <ThemeProvider
@@ -27,10 +26,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ClerkProvider appearance={{ baseTheme: dark }}>
+            {children}
+          </ClerkProvider>
         </ThemeProvider>
       </body>
     </html>
-    // </ClerkProvider>
   );
 }
